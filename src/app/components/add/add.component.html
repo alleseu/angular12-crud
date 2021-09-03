@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <nav class="mb-4" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ingreso de usuario</li>
+        </ol>
+    </nav>
+    
+    <form class="p-3 shadow rounded" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresar nombre" formControlName="nombre" minlength="5" required>
+            <div *ngIf="formulario.get('nombre')?.errors && (formulario.get('nombre')?.dirty || formulario.get('nombre')?.touched)">
+                <p class="text-danger" *ngIf="formulario.get('nombre')?.hasError('required')">Debe completar el campo.</p>
+                <p class="text-danger" *ngIf="formulario.get('nombre')?.hasError('minlength')">Debe ingresar como mínimo 5 carácteres.</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="edad" name="edad" placeholder="Ingresar edad" formControlName="edad" min="18" max="70" required>
+            <div *ngIf="formulario.get('edad')?.errors && (formulario.get('edad')?.dirty || formulario.get('edad')?.touched)">
+                <p class="text-danger" *ngIf="formulario.get('edad')?.hasError('required')">Debe completar el campo.</p>
+                <p class="text-danger" *ngIf="formulario.get('edad')?.hasError('min')">Debe ingresar una edad mayor o igual a 18 años.</p>
+                <p class="text-danger" *ngIf="formulario.get('edad')?.hasError('max')">Debe ingresar una edad menor o igual a 70 años.</p>
+            </div>
+        </div>
+        <div class="mb-5">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresar correo" formControlName="correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+            <div *ngIf="formulario.get('correo')?.errors && (formulario.get('correo')?.dirty || formulario.get('correo')?.touched)">
+                <p class="text-danger" *ngIf="formulario.get('correo')?.hasError('required')">Debe completar el campo.</p>
+                <p class="text-danger" *ngIf="formulario.get('correo')?.hasError('email') || formulario.get('correo')?.hasError('pattern')">Debe ingresar un correo válido.</p>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Guardar</button>
+        </div>
+    </form>
+</div>
+

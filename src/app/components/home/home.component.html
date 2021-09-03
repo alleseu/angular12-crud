@@ -1,0 +1,60 @@
+<section class="container mt-5">
+    <div class="d-flex justify-content-between">
+        <p [style.color]="cantidad >=2 ? 'green' : 'red'">
+            Cantidad de registros: {{cantidad}}
+        </p>
+        <a class="btn btn-outline-primary" routerLink="/add">
+            <i class="fa fa-plus-circle fa-lg"></i>
+        </a>
+    </div>
+    <table class="table table-hover shadow rounded mt-3">
+        <thead>
+            <tr class="text-center">
+                <th>ID</th>
+                <th>Avatar</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>Fecha ingreso</th>
+                <th>Fecha actualización</th>
+                <th>Herramientas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td class="text-end">
+                    {{usuario.id}}
+                </td>
+                <td class="text-center">
+                    {{usuario.avatar | lowercase}}
+                </td>
+                <td class="text-center">
+                    {{usuario.nombre | uppercase}}
+                </td>
+                <td class="text-center">
+                    {{usuario.edad}}
+                </td>
+                <td class="text-center">
+                    {{usuario.correo | lowercase}}
+                </td>
+                <td class="text-center">
+                    {{usuario.fecha_insert.toLocaleDateString("en-US")}}
+                </td>
+                <td class="text-center">
+                    {{usuario.fecha_update.toLocaleDateString("en-US")}}
+                </td>
+                <td class="text-center">
+                    <div class="btn-group" role="group" aria-label="Herramientas">
+                        <a class="btn btn-outline-primary" (click)="onShow(usuario)">
+                            <i class="fa fa-edit fa-lg"></i>
+                        </a>
+                        <a class="btn btn-outline-primary" (click)="onDelete(usuario)">
+                            <i class="fa fa-trash fa-lg"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
