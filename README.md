@@ -1,7 +1,7 @@
-# Mantenedor Web - Angular 12
+# Mantenedor Web - TS Angular 12 Framework
 
 * Autor: `Alejandro Alberto Sánchez Iturriaga`
-* Fecha de actualización: `02-09-2021`
+* Fecha de actualización: `03-09-2021`
 * Angular-Cli Versión: `12.1.1`
 
 ---
@@ -16,16 +16,16 @@
 
 ### Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecute `ng serve` para levantar el servidor de desarrollo. Vaya a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
 
 ### Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecute `ng generate component component-name` para generar un nuevo componente. También puede usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ### Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Ejecute `ng build` para construir el proyecto. Los artefactos de construcción se almacenarán en el directorio `dist/`.
 
 ### Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma]
+Ejecute `ng test` para las pruebas unitarias a través de [Karma].
