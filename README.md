@@ -1,10 +1,21 @@
-# Mantenedor Web - TS Angular 12 Framework
+# Aplicación Web - TS Angular 12 Framework
 
 * Autor: `Alejandro Alberto Sánchez Iturriaga`
 * Fecha de actualización: `03-09-2021`
 * Angular-Cli Versión: `12.1.1`
 
 ---
+
+## Requisitos para ejecutar la aplicación
+
+* Instalar paquete y todas sus dependencias en el directorio `node_modules/` con:
+    ```text
+	npm install
+	```
+* Iniciar la aplicación con:
+    ```text
+	ng serve
+	```
 
 ## Link importantes del Framework
 
